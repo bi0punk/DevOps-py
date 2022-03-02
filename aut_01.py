@@ -7,7 +7,7 @@ print(type(uso_disco))
 
 
 
-def to_gb(bytes):
+def transforma_gb(bytes):
     "Convierte bytes a gigabytes."
     return bytes / 1024**3
 
