@@ -7,7 +7,7 @@ import os
 import sys
 
 
-""" uso_disco = psutil.disk_usage("/")
+uso_disco = psutil.disk_usage("/")
 
 print(uso_disco)
 print(type(uso_disco))
@@ -24,20 +24,20 @@ print("Porcentaje de espacio usado: {}%.".format(uso_disco.percent))
 if uso_disco.free >= 37.15:
     print("ALERTA POCO ESPACIO")
 else:
-    print("NO HAY PROBLEMA, ESPACIO DISPONIBLE") """
+    print("NO HAY PROBLEMA, ESPACIO DISPONIBLE")
 
 tamaño = 0
   
-""" dir_clean= '/var/log/'
+dir_clean= '/var/log/'
   
 for path, dirs, files in os.walk(dir_clean): 
     for f in files: 
         fp = os.path.join(path, f) 
-        tamaño += os.path.getsize(fp)  """
-"""   
+        tamaño += os.path.getsize(fp) 
+  
 print("Folder size: " + str(tamaño)) 
 remove("archivo.txt")
- """
+
 
  #in linux 
 def del_log():
