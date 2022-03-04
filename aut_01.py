@@ -1,11 +1,13 @@
-import psutil
-import os 
 from os import remove
+from humanize import naturalsize
+import psutil
+import subprocess
+import pathlib
 import os
+import sys
 
 
-
-uso_disco = psutil.disk_usage("/")
+""" uso_disco = psutil.disk_usage("/")
 
 print(uso_disco)
 print(type(uso_disco))
@@ -22,7 +24,7 @@ print("Porcentaje de espacio usado: {}%.".format(uso_disco.percent))
 if uso_disco.free >= 37.15:
     print("ALERTA POCO ESPACIO")
 else:
-    print("NO HAY PROBLEMA, ESPACIO DISPONIBLE")
+    print("NO HAY PROBLEMA, ESPACIO DISPONIBLE") """
 
 tamaño = 0
   
@@ -41,6 +43,11 @@ remove("archivo.txt")
 def del_log():
     contenido = os.listdir('/var/log/')
     print(contenido)
+
+size = os.stat('lorem.txt').st_size
+
+print(size)
+print(naturalsize(size))
     
 del_log()
 
