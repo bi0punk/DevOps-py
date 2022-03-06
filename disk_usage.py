@@ -7,3 +7,6 @@ def var_size():
     print(naturalsize(size))
     print(type(naturalsize(size)))
 var_size()
+
+
+

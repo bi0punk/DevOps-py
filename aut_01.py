@@ -6,7 +6,7 @@ import pathlib
 import os
 import sys
 
-
+#############################################################################
 uso_disco = psutil.disk_usage("/")
 
 print(uso_disco)
@@ -25,6 +25,15 @@ if uso_disco.free >= 37.15:
     print("ALERTA POCO ESPACIO")
 else:
     print("NO HAY PROBLEMA, ESPACIO DISPONIBLE")
+
+
+##########################################################
+
+
+
+
+
+
 
 tamaño = 0
   
