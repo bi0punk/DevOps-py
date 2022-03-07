@@ -11,6 +11,32 @@ import sys
 
 x = PrettyTable()
 
+x.field_names = ["Unidad", "Gigabytes"]
+x.add_rows(
+    [
+        ["Espacio total:", 1295],
+        ["Espacio libre:", 5905],
+        ["Espacio usado:", 112],
+        ["Porcentaje spacio usado:", 1357],
+    ]
+)
+print(x)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#################################3
 uso_disco = psutil.disk_usage("/")
 
 print(uso_disco)
