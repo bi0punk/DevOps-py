@@ -1,7 +1,5 @@
 from os import remove
 from prettytable import PrettyTable
-
-
 from humanize import naturalsize
 import psutil
 import subprocess
