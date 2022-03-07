@@ -11,44 +11,35 @@ import sys
 
 x = PrettyTable()
 
+#################################3
+uso_disco = psutil.disk_usage("/")
+
+print(uso_disco)
+""" print(type(uso_disco)) """
+
+def transforma_gb(bytes):
+    "Convierte bytes a gigabytes."
+    return bytes / 1024**3
+
+
+print("Espacio total: {:.2f} GB.".format(transforma_gb(uso_disco.total)))
+print("Espacio libre: {:.2f} GB.".format(transforma_gb(uso_disco.free)))
+print("Espacio usado: {:.2f} GB.".format(transforma_gb(uso_disco.used)))
+print("Porcentaje de espacio usado: {}%.".format(uso_disco.percent))
+
+
 x.field_names = ["Unidad", "Gigabytes"]
 x.add_rows(
     [
-        ["Espacio total:", 1295],
-        ["Espacio libre:", 5905],
-        ["Espacio usado:", 112],
-        ["Porcentaje spacio usado:", 1357],
+        ["Espacio total:", "{:.2f} GB.".format(transforma_gb(uso_disco.total))],
+        ["Espacio libre:", "{:.2f} GB.".format(transforma_gb(uso_disco.free))],
+        ["Espacio usado:", "{:.2f} GB.".format(transforma_gb(uso_disco.used))],
+        ["Porcentaje spacio usado:","{}%.".format(uso_disco.percent)],
     ]
 )
 print(x)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-#################################3
-uso_disco = psutil.disk_usage("/")
-
-print(uso_disco)
-print(type(uso_disco))
-
-def transforma_gb(bytes):
-    "Convierte bytes a gigabytes."
-    return bytes / 1024**3
-print("Espacio total: {:.2f} GB.".format(transforma_gb(uso_disco.total)))
-print("Espacio libre: {:.2f} GB.".format(transforma_gb(uso_disco.free)))
-print("Espacio usado: {:.2f} GB.".format(transforma_gb(uso_disco.used)))
-print("Porcentaje de espacio usado: {}%.".format(uso_disco.percent))
 
 
 if uso_disco.free >= 37.15:
@@ -58,10 +49,6 @@ else:
 
 
 ##########################################################
-
-
-
-
 
 
 
