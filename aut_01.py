@@ -1,4 +1,7 @@
 from os import remove
+from prettytable import PrettyTable
+
+
 from humanize import naturalsize
 import psutil
 import subprocess
@@ -6,7 +9,10 @@ import pathlib
 import os
 import sys
 
-#############################################################################
+#############################################################################S
+
+x = PrettyTable()
+
 uso_disco = psutil.disk_usage("/")
 
 print(uso_disco)
