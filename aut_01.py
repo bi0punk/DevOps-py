@@ -26,7 +26,7 @@ x.add_rows(
         ["Espacio total:", "{:.2f} GB.".format(transforma_gb(uso_disco.total))],
         ["Espacio libre:", "{:.2f} GB.".format(transforma_gb(uso_disco.free))],
         ["Espacio usado:", "{:.2f} GB.".format(transforma_gb(uso_disco.used))],
-        ["Porcentaje spacio usado:","{}%.".format(uso_disco.percent)],
+        ["Porcentaje espacio usado:","{}%.".format(uso_disco.percent)],
     ]
 )
 print(x)
@@ -51,18 +51,18 @@ for path, dirs, files in os.walk(dir_clean):
         tamaño += os.path.getsize(fp) 
   
 print("Folder size: " + str(tamaño)) 
-remove("archivo.txt")
+""" remove("archivo.txt") """
 
 
  #in linux 
 def del_log():
     contenido = os.listdir('/var/log/')
     print(contenido)
+""" 
+size = os.stat('lorem.txt').st_size """
 
-size = os.stat('lorem.txt').st_size
-
-print(size)
-print(naturalsize(size))
+""" print(size)
+print(naturalsize(size)) """
     
 del_log()
 
