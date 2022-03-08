@@ -20,14 +20,6 @@ print(uso_disco)
 def transforma_gb(bytes):
     "Convierte bytes a gigabytes."
     return bytes / 1024**3
-
-
-print("Espacio total: {:.2f} GB.".format(transforma_gb(uso_disco.total)))
-print("Espacio libre: {:.2f} GB.".format(transforma_gb(uso_disco.free)))
-print("Espacio usado: {:.2f} GB.".format(transforma_gb(uso_disco.used)))
-print("Porcentaje de espacio usado: {}%.".format(uso_disco.percent))
-
-
 x.field_names = ["Unidad", "Gigabytes"]
 x.add_rows(
     [
@@ -38,9 +30,6 @@ x.add_rows(
     ]
 )
 print(x)
-
-
-
 
 if uso_disco.free >= 37.15:
     print("ALERTA POCO ESPACIO")
@@ -78,3 +67,8 @@ print(naturalsize(size))
 del_log()
 
 
+
+print("Espacio total: {:.2f} GB.".format(transforma_gb(uso_disco.total)))
+print("Espacio libre: {:.2f} GB.".format(transforma_gb(uso_disco.free)))
+print("Espacio usado: {:.2f} GB.".format(transforma_gb(uso_disco.used)))
+print("Porcentaje de espacio usado: {}%.".format(uso_disco.percent))
