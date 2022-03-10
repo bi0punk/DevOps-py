@@ -16,14 +16,14 @@ opcion = 0
  
 while not salir:
 
-    print("        +-+-+-+-+") 
+    print("\n        +-+-+-+-+") 
     print("        |C|A|A|P|")
     print("        +-+-+-+-+")
-    print("CONSOLE ANSIBLE AUTOMATION PACK")
+    print("CONSOLE ANSIBLE AUTOMATION PACK\n")
     
-    print ("1. Opcion 1")
-    print ("2. Opcion 2")
-    print ("3. Opcion 3")
+    print ("1. Realizar Ping")
+    print ("2. Instalación Mariadb")
+    print ("3. Eliminación de Logs")
     print ("4. Salir")
      
     print ("Elige una opcion")
