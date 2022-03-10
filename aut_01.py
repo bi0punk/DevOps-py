@@ -6,6 +6,13 @@ import subprocess
 import pathlib
 import os
 import sys
+import platform
+
+#################################### identificaion sistema #################33
+
+os = platform.system()
+print(os)
+
 
 #############################################################################S
 
