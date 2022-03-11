@@ -1,0 +1,5 @@
+[testing]
+192.168.1.175 ansible_ssh_user=root
+
+[produccion]
+192.168.1.176 ansible_ssh_user=root

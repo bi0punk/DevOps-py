@@ -40,13 +40,12 @@ print(x)
 
 if uso_disco.free >= 37.15:
     print("ALERTA POCO ESPACIO")
+
 else:
     print("NO HAY PROBLEMA, ESPACIO DISPONIBLE")
 
 
 ##########################################################
-
-
 
 tamaño = 0
   
