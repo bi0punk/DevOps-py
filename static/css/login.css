@@ -1,0 +1,12 @@
+
+
+.back {
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    height: 100vh;
+    
+    filter: blur(4px);
+
+}
+
