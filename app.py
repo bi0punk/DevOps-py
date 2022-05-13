@@ -92,7 +92,7 @@ def login():
 def dashboard():
     p = time.time()
     try:
-        kil = os.popen('taskkill /PID 15764').read()
+        kil = os.popen('taskkill/ PID 12748 / F').read()
         #serv = subprocess.run("taskkill /F 18828", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
         #serv.stdout
         pid = os.popen('wmic process get processid').read()
