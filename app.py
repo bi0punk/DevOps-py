@@ -10,6 +10,13 @@ import subprocess
 import time
 
 
+import scapy.all as scapy
+
+
+
+
+
+
 import wmi
 
 app = Flask(__name__)
@@ -110,7 +117,10 @@ def logout():
 
 
 
+def escanear(direccion_ip):
+    scapy.arping(direccion_ip)
 
+escanear("192.168.1.1/24")
 
 
 
