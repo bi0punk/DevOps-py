@@ -12,11 +12,6 @@ import time
 
 import scapy.all as scapy
 
-
-
-
-
-
 import wmi
 
 app = Flask(__name__)
