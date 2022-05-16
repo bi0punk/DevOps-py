@@ -21,12 +21,13 @@
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container">
-                <a class="navbar-brand" href="#">Start Bootstrap</a>
+                <!--<a  class="navbar-brand" href="#">Start Bootstrap</a>-->
+                <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Kyndryl_logo.svg" alt="" width="125" height="40"> 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Panel</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
@@ -43,11 +44,12 @@
         <!-- Page content-->
         <div class="container">
             <div class="text-center mt-5">
-                <h1>Admin Panel</h1>
-                <p class="lead">A complete project boilerplate built with Bootstrap</p>
-                <p>Bootstrap v5.1.3</p>
+                <h2>Admin Panel</h2>
+                <p class="lead"> {{hname}}</p>
+                <p>{{now}}</p>
             </div>
         </div>
+        <br>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
@@ -55,10 +57,10 @@
 
 
         <div class="container">
-            <table class="table">
+            <table class="table text-center">
                 <thead class="thead-dark">
                   <tr>
-                    <th scope="col">Servidor</th>
+                    <th scope="col">Nombre servidor</th>
                     <th scope="col">Servicio</th>
                     <th scope="col">Status</th>
                     <th scope="col">Accion</th>
@@ -66,17 +68,18 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
+                    <th scope="row"><p>HIJ-40</p>
+                    192.168.1.90</th>
+                    <td></td>
                     <td>Otto</td>
-                    <td><button type="button" class="btn btn-secondary">Reiniciar</button>
-                        <button type="button" class="btn btn-secondary">Detener</button></td>
+                    <td><input type="submit" name="submit_button" value="Do Something">
+                        <input type="submit" name="submit_button" value="Do Something Else">
                   </tr>
                   <tr>
                     <th scope="row">2</th>
                     <td>Jacob</td>
                     <td>Thornton</td>
-                    <td><button type="button" class="btn btn-secondary">Reiniciar</button>
+                    <td><button type="submit" class="btn btn-secondary">Reiniciar</button>
                         <button type="button" class="btn btn-secondary">Detener</button></td>
                   </tr>
                   <tr>

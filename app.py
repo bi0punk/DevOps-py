@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, redirect
+from flask import Flask, render_template, url_for, redirect, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 from flask_wtf import FlaskForm
@@ -7,12 +7,11 @@ from wtforms.validators import InputRequired, Length, ValidationError
 from flask_bcrypt import Bcrypt
 import os
 import subprocess
-import time
-
-
+from datetime import datetime
 import scapy.all as scapy
-
+import time 
 import wmi
+import socket
 
 app = Flask(__name__)
 db = SQLAlchemy(app)
@@ -85,7 +84,21 @@ def login():
 @app.route('/dashboard', methods=['GET', 'POST'])
 @login_required
 def dashboard():
+    if request.method == 'POST':
+        if request.form['submit_button'] == 'Do Something':
+            pass # do something
+        elif request.form['submit_button'] == 'Do Something Else':
+            pass # do something else
+        else:
+            pass # unknown
+    elif request.method == 'GET':
+        return render_template('dashboard.html')
+    now = datetime.today().strftime('%A, %B %d, %Y, %H:%M:%S')
+    hname = socket.gethostname()
     p = time.time()
+
+
+
     try:
         kil = os.popen('taskkill/ PID 12748 / F').read()
         #serv = subprocess.run("taskkill /F 18828", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
@@ -99,23 +112,16 @@ def dashboard():
     f = time.time()
     print(f-p)
 
+    
 
-    return render_template('dashboard.html')
+
+    return render_template('dashboard.html', now = now, hname = hname)
 
 @app.route('/logout', methods=['GET', 'POST'])
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('login'))
-
-
-
-
-
-def escanear(direccion_ip):
-    scapy.arping(direccion_ip)
-
-escanear("192.168.1.1/24")
 
 
 
