@@ -84,6 +84,7 @@ def login():
 @app.route('/dashboard', methods=['GET', 'POST'])
 @login_required
 def dashboard():
+    request = scapy.ARP() 
     now = datetime.today().strftime('%A, %B %d, %Y, %H:%M:%S')
     hip = socket.gethostbyname(socket.gethostname())
     hname = socket.gethostname()
