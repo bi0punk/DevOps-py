@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, url_for, redirect, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
@@ -8,7 +9,6 @@ from flask_bcrypt import Bcrypt
 import os
 import subprocess
 from datetime import datetime
-import scapy.all as scapy
 import time 
 import wmi
 import socket
@@ -84,20 +84,10 @@ def login():
 @app.route('/dashboard', methods=['GET', 'POST'])
 @login_required
 def dashboard():
-    if request.method == 'POST':
-        if request.form['submit_button'] == 'Do Something':
-            pass # do something
-        elif request.form['submit_button'] == 'Do Something Else':
-            pass # do something else
-        else:
-            pass # unknown
-    elif request.method == 'GET':
-        return render_template('dashboard.html')
     now = datetime.today().strftime('%A, %B %d, %Y, %H:%M:%S')
+    hip = socket.gethostbyname(socket.gethostname())
     hname = socket.gethostname()
     p = time.time()
-
-
 
     try:
         kil = os.popen('taskkill/ PID 12748 / F').read()
@@ -111,11 +101,9 @@ def dashboard():
         print("ª")
     f = time.time()
     print(f-p)
+    return render_template('dashboard.html', now = now, hname = hname, hip = hip)
 
-    
 
-
-    return render_template('dashboard.html', now = now, hname = hname)
 
 @app.route('/logout', methods=['GET', 'POST'])
 @login_required
@@ -125,9 +113,7 @@ def logout():
 
 
 
-
-
-@ app.route('/register', methods=['GET', 'POST'])
+@app.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegisterForm()
 
@@ -141,8 +127,20 @@ def register():
     return render_template('register.html', form=form)
 
 
+
+
+#POST METHODS
+
+
+@app.route('/commands', methods=['POST'])
+def command():
+    a = datetime.today().strftime('%A, %B %d, %Y, %H:%M:%S')
+    if request.method == 'POST':
+        return f'Comando ejecutado correctamente: '+str(a)
+
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host='192.168.1.82', port=5000)
 
 
 

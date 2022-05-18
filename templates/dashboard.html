@@ -13,10 +13,6 @@
     </head>
 
 
-
-
-
-
     <body>
         <!-- Responsive navbar-->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -29,12 +25,11 @@
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">Panel</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Logout</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Dropdown</a>
+                            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Menu</a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" href="#">Action</a></li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                <li><a class="dropdown-item" href="#">Acccion 1</a></li>
+                                <li><a class="dropdown-item" href="#">Accion 2</a></li>
+                                <li><a class="dropdown-item" href="#">Accion 4</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -44,8 +39,8 @@
         <!-- Page content-->
         <div class="container">
             <div class="text-center mt-5">
-                <h2>Admin Panel</h2>
-                <p class="lead"> {{hname}}</p>
+                <h3>Web service admin panel</h3>
+                <p class="lead">Main Server: {{hname}}</p>
                 <p>{{now}}</p>
             </div>
         </div>
@@ -57,10 +52,11 @@
 
 
         <div class="container">
-            <table class="table text-center">
+            <form action="{{url_for('command')}}" method="POST">
+            <table class="table text-center" form>
                 <thead class="thead-dark">
                   <tr>
-                    <th scope="col">Nombre servidor</th>
+                    <th scope="col">Servidor / IP</th>
                     <th scope="col">Servicio</th>
                     <th scope="col">Status</th>
                     <th scope="col">Accion</th>
@@ -68,56 +64,15 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <th scope="row"><p>HIJ-40</p>
-                    192.168.1.90</th>
-                    <td></td>
-                    <td>Otto</td>
-                    <td><input type="submit" name="submit_button" value="Do Something">
-                        <input type="submit" name="submit_button" value="Do Something Else">
-                  </tr>
-                  <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td><button type="submit" class="btn btn-secondary">Reiniciar</button>
-                        <button type="button" class="btn btn-secondary">Detener</button></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Larry</td>
-                    <td>the Bird</td>
-                    <td><button type="button" class="btn btn-secondary">Reiniciar</button>
-                        <button type="button" class="btn btn-secondary">Detener</button></td>
-                  </tr>
-                  <tr>
-                    <th scope="row">3</th>
-                    <td>Data</td>
-                    <td>Data</td>
-                    <td><button type="button" class="btn btn-secondary">Reiniciar</button>
-                        <button type="button" class="btn btn-secondary">Detener</button></td>
-                  </tr>
+                    <th scope="row"><p>{{hname}}</p>
+                    {{hip}}</th>
+                    <td>Null</td>
+                    <td>Null</td>
+                    <td><input type="submit" name="Reiniciar" id="1" value="Reiniciar">
+                        <input type="submit" name="Detener" id='2' value="Detener">
+                    </tr>
                 </tbody>
             </table>
         </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </body>
 </html>
