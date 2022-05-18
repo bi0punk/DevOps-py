@@ -10,7 +10,6 @@ import os
 import subprocess
 from datetime import datetime
 import time 
-import wmi
 import socket
 
 app = Flask(__name__)
