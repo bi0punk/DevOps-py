@@ -13,6 +13,8 @@ import time
 import socket
 
 app = Flask(__name__)
+
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
@@ -128,14 +130,23 @@ def register():
 
 
 
-#POST METHODS
 
+#POST METHODS
 
 @app.route('/commands', methods=['POST'])
 def command():
-    a = datetime.today().strftime('%A, %B %d, %Y, %H:%M:%S')
     if request.method == 'POST':
-        return f'Comando ejecutado correctamente: '+str(a)
+
+        rbt = request.form['restart']
+        #dtn = request.form['falsee']
+        print(rbt)
+        if rbt == 'true':
+            equipos  = os.popen('TASKKILL /T /F /PID 20248').read()
+            print(equipos)
+
+            a = datetime.today().strftime('%A, %B %d, %Y, %H:%M:%S')
+            #return f'Comando ejecutado correctamente: '+str(a)
+            return redirect(url_for('dashboard'))
 
 
 if __name__ == "__main__":
