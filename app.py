@@ -6,11 +6,14 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
 from flask_bcrypt import Bcrypt
-import os
-import subprocess
 from datetime import datetime
-import time 
+import subprocess
 import socket
+import time
+import os
+
+
+
 
 app = Flask(__name__)
 
@@ -80,8 +83,6 @@ def login():
     return render_template('login.html', form=form)
 
 
-
-
 @app.route('/dashboard', methods=['GET', 'POST'])
 @login_required
 def dashboard():
@@ -105,13 +106,11 @@ def dashboard():
     return render_template('dashboard.html', now = now, hname = hname, hip = hip)
 
 
-
 @app.route('/logout', methods=['GET', 'POST'])
 @login_required
 def logout():
     logout_user()
     return redirect(url_for('login'))
-
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -128,30 +127,13 @@ def register():
     return render_template('register.html', form=form)
 
 
-
-
-
-#POST METHODS
-
 @app.route('/commands', methods=['POST'])
 def command():
     if request.method == 'POST':
-
         rbt = request.form['restart']
-        #dtn = request.form['falsee']
         print(rbt)
-        if rbt == 'true':
-            equipos  = os.popen('TASKKILL /T /F /PID 20248').read()
-            print(equipos)
-
-            a = datetime.today().strftime('%A, %B %d, %Y, %H:%M:%S')
-            #return f'Comando ejecutado correctamente: '+str(a)
-            return redirect(url_for('dashboard'))
+        return redirect(url_for('dashboard'))
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host='192.168.1.82', port=5000)
-
-
-
-
+    app.run(debug=True, host='192.168.1.93', port=5000)
